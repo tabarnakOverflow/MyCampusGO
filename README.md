@@ -1,11 +1,12 @@
-# MyCampusGO Server
+# MyCampusGO API
 
 FastAPI + Uvicorn service that scrapes StFX events and announcements in order to expose an API for the MyCampusGO client.
 
-## Run locally
+## Run the API locally
+cd /opt/mycampusgo_server
 python -m venv .venv \
 source .venv/bin/activate \
-pip install -r requirements.txt \
+pip install -r mycampusgo_api/requirements.txt \
 uvicorn mycampusgo_api.main:app --host 0.0.0.0 --port 8000
 
 ## Endpoints
