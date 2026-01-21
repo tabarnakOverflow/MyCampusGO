@@ -22,3 +22,14 @@ fixtures/
 *.sqlite
 *.db
 .env
+
+# Android / Gradle
+**/.idea/
+**/.gradle/
+**/build/
+**/*.iml
+local.properties
+
+# Keystore Files
+*.jks
+*.keystore
