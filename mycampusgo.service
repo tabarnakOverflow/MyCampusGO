@@ -1,0 +1,23 @@
+[Unit]
+Description=MyCampusGO API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=<YOUR_USER>
+WorkingDirectory=/opt/mycampusgo_server
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/opt/mycampusgo_server
+ExecStart=/opt/mycampusgo_server/.venv/bin/uvicorn mycampusgo_api.main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=2
+
+# Good hardening defaults (safe for this app)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
