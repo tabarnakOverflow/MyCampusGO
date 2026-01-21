@@ -3,10 +3,10 @@
 FastAPI + Uvicorn service that scrapes StFX events and announcements in order to expose a JSON API for the MyCampusGO Android app.
 
 ## Run locally
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn mycampusgo_api.main:app --host 0.0.0.0 --port 8000
+python -m venv .venv \
+source .venv/bin/activate \
+pip install -r requirements.txt \
+uvicorn mycampusgo_api.main:app --host 0.0.0.0 --port 8000 \
 
 ## Endpoints
 - GET /health
