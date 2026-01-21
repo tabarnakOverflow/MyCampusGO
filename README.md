@@ -1,6 +1,6 @@
 # MyCampusGO Server
 
-FastAPI + Uvicorn service that scrapes StFX events and announcements in order to expose a JSON API for the MyCampusGO Android app.
+FastAPI + Uvicorn service that scrapes StFX events and announcements in order to expose an API for the MyCampusGO client.
 
 ## Run locally
 python -m venv .venv \
