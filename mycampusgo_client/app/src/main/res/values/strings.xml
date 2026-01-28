@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyCampusGO</string>
+    <string name="events">Events</string>
+    <string name="announcements">Announcements</string>
+    <string name="about">About</string>
+    <string name="about_top_bar">About MyCampusGO</string>
+    <string name="event_detail">Event Detail</string>
 </resources>

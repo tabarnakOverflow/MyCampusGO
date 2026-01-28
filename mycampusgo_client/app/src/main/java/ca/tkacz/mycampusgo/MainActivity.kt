@@ -31,6 +31,25 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
+        navController.addOnDestinationChangedListener { _, destination, arguments ->
+            when (destination.id) {
+                R.id.eventsFragment -> {
+                    supportActionBar?.title = getString(R.string.events)
+                }
+                R.id.announcementsFragment -> {
+                    supportActionBar?.title = getString(R.string.announcements)
+                }
+                R.id.aboutFragment -> {
+                    supportActionBar?.title = getString(R.string.about_top_bar)
+                }
+                R.id.eventDetailFragment -> {
+                    supportActionBar?.title = getString(R.string.event_detail)
+                }
+            }
+
+        }
+
+
         findViewById<BottomNavigationView>(R.id.bottomNav)
             .setupWithNavController(navController)
     }

@@ -7,16 +7,21 @@
     <fragment
         android:id="@+id/eventsFragment"
         android:name="ca.tkacz.mycampusgo.EventsFragment"
-        android:label="Events" />
+        android:label="@string/events" />
 
     <fragment
         android:id="@+id/announcementsFragment"
         android:name="ca.tkacz.mycampusgo.AnnouncementsFragment"
-        android:label="Announcements" />
+        android:label="@string/announcements" />
 
     <fragment
         android:id="@+id/aboutFragment"
         android:name="ca.tkacz.mycampusgo.AboutFragment"
-        android:label="About" />
+        android:label="@string/about" />
+
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="ca.tkacz.mycampusgo.EventDetailFragment"
+        android:label="@string/event_detail" />
 
 </navigation>
