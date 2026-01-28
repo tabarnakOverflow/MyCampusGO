@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/eventsFragment"
         android:name="ca.tkacz.mycampusgo.EventsFragment"
-        android:label="@string/events" />
+        android:label="@string/events">
+        <action
+            android:id="@+id/action_eventsFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/announcementsFragment"
@@ -22,6 +26,10 @@
     <fragment
         android:id="@+id/eventDetailFragment"
         android:name="ca.tkacz.mycampusgo.EventDetailFragment"
-        android:label="@string/event_detail" />
+        android:label="@string/event_detail">
+        <argument
+            android:name="slug"
+            app:argType="string" />
+    </fragment>
 
 </navigation>
