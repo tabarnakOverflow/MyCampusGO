@@ -19,6 +19,24 @@
             app:titleTextColor="@android:color/white"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Your content goes here (NavHostFragment / FragmentContainerView) -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        app:defaultNavHost="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#001C3F"
+        app:itemIconTint="@color/bottom_bar_item_tint"
+        app:itemTextColor="@color/bottom_bar_item_tint"
+        app:menu="@menu/bottom_bar"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

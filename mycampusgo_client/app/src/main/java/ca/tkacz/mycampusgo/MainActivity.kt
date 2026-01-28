@@ -1,31 +1,37 @@
 package ca.tkacz.mycampusgo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
-        val appBar = findViewById<AppBarLayout>(R.id.appBarLayout)
+        val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
+        setSupportActionBar(toolbar)
 
+        val appBar = findViewById<AppBarLayout>(R.id.appBarLayout)
         ViewCompat.setOnApplyWindowInsetsListener(appBar) { v, insets ->
             val topInset = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top
             v.updatePadding(top = topInset)
             insets
         }
 
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
 
-        val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
-        setSupportActionBar(toolbar)
+        findViewById<BottomNavigationView>(R.id.bottomNav)
+            .setupWithNavController(navController)
     }
-
 }
