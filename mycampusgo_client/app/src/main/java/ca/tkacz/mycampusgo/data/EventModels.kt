@@ -6,7 +6,7 @@ data class EventSummary(
     val location: String? = null,
     val start: String? = null,   // ISO string from your API (keep as String first)
     val end: String? = null,
-    val excerpt: String? = null,
+    val teaser: String? = null,
     val event_type: String? = null,
     val image_url: String? = null
 )

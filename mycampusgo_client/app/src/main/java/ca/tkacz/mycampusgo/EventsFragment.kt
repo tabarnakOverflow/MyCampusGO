@@ -1,6 +1,7 @@
 package ca.tkacz.mycampusgo
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -43,6 +44,8 @@ class EventsFragment : Fragment(R.layout.fragment_events) {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val events = ApiClient.api.getEvents(daysBack = 7)
+
+                Log.d("EventsFragment", events.joinToString())
 
                 if (events.isEmpty()) {
                     showMessage("No events found.")

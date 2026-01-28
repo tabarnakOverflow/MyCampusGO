@@ -25,7 +25,7 @@ class EventAdapter(
             binding.eventTitle.text = e.title
             binding.eventTime.text = e.start ?: ""
             binding.eventLocation.text = e.location ?: ""
-            binding.eventExcerpt.text = e.excerpt ?: ""
+            binding.eventExcerpt.text = e.teaser ?: ""
 
             binding.root.setOnClickListener { onClick(e) }
         }
