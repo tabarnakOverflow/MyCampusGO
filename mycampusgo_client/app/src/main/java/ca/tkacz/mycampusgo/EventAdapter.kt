@@ -14,6 +14,7 @@ import java.time.Instant
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class EventAdapter(
     private val onClick: (EventSummary) -> Unit
@@ -32,7 +33,7 @@ class EventAdapter(
         val instant = OffsetDateTime.parse(apiTime).toInstant()
         val timeZone = ZoneId.systemDefault()
         val zonedDateTime = instant.atZone(timeZone)
-        val formatter = DateTimeFormatter.ofLocalizedDateTime(java.time.format.FormatStyle.MEDIUM)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT);
         return zonedDateTime.format(formatter)
     }
 
